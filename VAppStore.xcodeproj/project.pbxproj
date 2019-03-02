@@ -13,6 +13,7 @@
 		56AAF6DC222B1450006F508E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56AAF6DB222B1450006F508E /* Assets.xcassets */; };
 		56AAF6DF222B1450006F508E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AAF6DD222B1450006F508E /* LaunchScreen.storyboard */; };
 		56AAF6E7222B152B006F508E /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6E6222B152B006F508E /* BaseTabBarController.swift */; };
+		56AAF6EA222B2BA9006F508E /* AppSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6E9222B2BA9006F508E /* AppSearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		56AAF6DE222B1450006F508E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56AAF6E0222B1450006F508E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56AAF6E6222B152B006F508E /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		56AAF6E9222B2BA9006F508E /* AppSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		56AAF6D3222B144F006F508E /* VAppStore */ = {
 			isa = PBXGroup;
 			children = (
+				56AAF6E8222B2B91006F508E /* Controllers */,
 				56AAF6D4222B144F006F508E /* AppDelegate.swift */,
 				56AAF6D6222B144F006F508E /* ViewController.swift */,
 				56AAF6D8222B144F006F508E /* Main.storyboard */,
 				56AAF6DB222B1450006F508E /* Assets.xcassets */,
 				56AAF6DD222B1450006F508E /* LaunchScreen.storyboard */,
 				56AAF6E0222B1450006F508E /* Info.plist */,
-				56AAF6E6222B152B006F508E /* BaseTabBarController.swift */,
 			);
 			path = VAppStore;
+			sourceTree = "<group>";
+		};
+		56AAF6E8222B2B91006F508E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56AAF6E6222B152B006F508E /* BaseTabBarController.swift */,
+				56AAF6E9222B2BA9006F508E /* AppSearchController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				56AAF6D7222B144F006F508E /* ViewController.swift in Sources */,
 				56AAF6D5222B144F006F508E /* AppDelegate.swift in Sources */,
 				56AAF6E7222B152B006F508E /* BaseTabBarController.swift in Sources */,
+				56AAF6EA222B2BA9006F508E /* AppSearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
