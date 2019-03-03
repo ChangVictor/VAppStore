@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56A63FE9222C1FB40019F9AD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */; };
 		56AAF6D5222B144F006F508E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6D4222B144F006F508E /* AppDelegate.swift */; };
 		56AAF6D7222B144F006F508E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6D6222B144F006F508E /* ViewController.swift */; };
 		56AAF6DA222B144F006F508E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AAF6D8222B144F006F508E /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		56AAF6D1222B144F006F508E /* VAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56AAF6D4222B144F006F508E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56AAF6D6222B144F006F508E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56A63FE7222C1F9B0019F9AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		56AAF6C8222B144F006F508E = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		56AAF6D3222B144F006F508E /* VAppStore */ = {
 			isa = PBXGroup;
 			children = (
+				56A63FE7222C1F9B0019F9AD /* Views */,
 				56AAF6E8222B2B91006F508E /* Controllers */,
 				56AAF6D4222B144F006F508E /* AppDelegate.swift */,
 				56AAF6D6222B144F006F508E /* ViewController.swift */,
@@ -153,6 +164,7 @@
 				56AAF6D5222B144F006F508E /* AppDelegate.swift in Sources */,
 				56AAF6E7222B152B006F508E /* BaseTabBarController.swift in Sources */,
 				56AAF6EA222B2BA9006F508E /* AppSearchController.swift in Sources */,
+				56A63FE9222C1FB40019F9AD /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
