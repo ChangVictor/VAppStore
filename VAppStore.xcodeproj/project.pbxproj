@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5679587B222ED10100A8353A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679587A222ED10100A8353A /* SearchResult.swift */; };
 		56A63FE9222C1FB40019F9AD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */; };
 		56A63FEC222C35510019F9AD /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A63FEB222C35510019F9AD /* UIView+Layout.swift */; };
 		56A63FEE222C3A440019F9AD /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A63FED222C3A440019F9AD /* VerticalStackView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5679587A222ED10100A8353A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		56A63FEB222C35510019F9AD /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		56A63FED222C3A440019F9AD /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56795879222ED0F400A8353A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5679587A222ED10100A8353A /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		56A63FE7222C1F9B0019F9AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		56AAF6D3222B144F006F508E /* VAppStore */ = {
 			isa = PBXGroup;
 			children = (
+				56795879222ED0F400A8353A /* Model */,
 				56A63FEA222C353C0019F9AD /* Helpers */,
 				56A63FE7222C1F9B0019F9AD /* Views */,
 				56AAF6E8222B2B91006F508E /* Controllers */,
@@ -176,6 +187,7 @@
 			files = (
 				56AAF6D7222B144F006F508E /* ViewController.swift in Sources */,
 				56AAF6D5222B144F006F508E /* AppDelegate.swift in Sources */,
+				5679587B222ED10100A8353A /* SearchResult.swift in Sources */,
 				56A63FEC222C35510019F9AD /* UIView+Layout.swift in Sources */,
 				56AAF6E7222B152B006F508E /* BaseTabBarController.swift in Sources */,
 				56AAF6EA222B2BA9006F508E /* AppSearchController.swift in Sources */,
