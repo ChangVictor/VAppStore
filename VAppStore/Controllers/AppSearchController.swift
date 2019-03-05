@@ -18,6 +18,46 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
         collectionView.backgroundColor = .white
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
         
+        fetchItunesApps()
+        
+    }
+    
+    struct SearchResult: Decodable {
+        let resultCount: Int
+        let results: [Result]
+        
+    }
+    
+    struct Result: Decodable {
+        let trackName: String
+        let primaryGenreName: String
+    }
+    
+    fileprivate func fetchItunesApps() {
+    let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+        guard let url = URL(string: urlString) else { return }
+    // fetch data from internet
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Failed to fetch Apps: ", error)
+                return
+            }
+            
+            guard let data = data else { return }
+            // succes
+            do {
+                let searchResult = try
+                    JSONDecoder().decode(SearchResult.self, from: data)
+                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
+            } catch let jsonError{
+                print("Failed to decode JSON: ", jsonError.localizedDescription)
+            }
+            
+            
+            
+            
+        }.resume()
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -29,7 +69,8 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
+        cell.nameLabel.text = "Here is the App name"
         return cell
     }
     

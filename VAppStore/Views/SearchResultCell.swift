@@ -82,7 +82,7 @@ class SearchResultCell: UICollectionViewCell {
         screenshoStackView.spacing = 12
         screenshoStackView.distribution = .fillEqually
         
-        let overallStackView = VerticalStackView(arrangedSubViews: [
+         let overallStackView = VerticalStackView(arrangedSubViews: [
             infoTopStackView, screenshoStackView
             ], spacing: 16)
         
