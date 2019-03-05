@@ -21,7 +21,8 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
         fetchItunesApps()
         
     }
-
+    
+    fileprivate var appResults = [Result]()
     
     fileprivate func fetchItunesApps() {
     let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
@@ -38,13 +39,17 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
             do {
                 let searchResult = try
                     JSONDecoder().decode(SearchResult.self, from: data)
-                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
+//                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
+                self.appResults = searchResult.results
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
             } catch let jsonError{
                 print("Failed to decode JSON: ", jsonError.localizedDescription)
+                
             }
-            
-            
-            
             
         }.resume()
     
@@ -55,12 +60,17 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return appResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
-        cell.nameLabel.text = "Here is the App name"
+        
+        let appResult = appResults[indexPath.item]
+        cell.nameLabel.text = appResult.trackName
+        cell.categoryLabel.text = appResult.primaryGenreName
+        cell.ratingLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
+        
         return cell
     }
     
