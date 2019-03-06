@@ -25,34 +25,13 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
     fileprivate var appResults = [Result]()
     
     fileprivate func fetchItunesApps() {
-    let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
-        guard let url = URL(string: urlString) else { return }
-    // fetch data from internet
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print("Failed to fetch Apps: ", error)
-                return
+        
+        Service.shared.fetchApps { (results) in
+            self.appResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
-            
-            guard let data = data else { return }
-            // succes
-            do {
-                let searchResult = try
-                    JSONDecoder().decode(SearchResult.self, from: data)
-//                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
-                self.appResults = searchResult.results
-                
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-                
-            } catch let jsonError{
-                print("Failed to decode JSON: ", jsonError.localizedDescription)
-                
-            }
-            
-        }.resume()
-    
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
