@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -16,6 +17,7 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
         super.viewDidLoad()
         
         collectionView.backgroundColor = .white
+        
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: cellId)
         
         fetchItunesApps()
@@ -25,11 +27,10 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
     fileprivate var appResults = [Result]()
     
     fileprivate func fetchItunesApps() {
-        
-        Service.shared.fetchApps { (results, error) in
+        Service.shared.fetchApps { (results, err) in
             
-            if let error = error {
-                print("Failed to fetch Apps: ", error.localizedDescription)
+            if let err = err {
+                print("Failed to fetch Apps: ", err.localizedDescription)
                 return
             }
             
@@ -38,6 +39,8 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
                 self.collectionView.reloadData()
             }
         }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -51,11 +54,7 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
         
-        let appResult = appResults[indexPath.item]
-        cell.nameLabel.text = appResult.trackName
-        cell.categoryLabel.text = appResult.primaryGenreName
-        cell.ratingLabel.text = "Rating: \(appResult.averageUserRating ?? 0)"
-        
+        cell.appResult = appResults[indexPath.item]
         return cell
     }
     

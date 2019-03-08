@@ -10,13 +10,12 @@ import UIKit
 
 class VerticalStackView: UIStackView {
     
-    init(arrangedSubViews: [UIView], spacing: CGFloat = 0) {
+    init(arrangedSubviews: [UIView], spacing: CGFloat = 0) {
         super.init(frame: .zero)
         
-        arrangedSubViews.forEach({addArrangedSubview($0)})
+        arrangedSubviews.forEach({addArrangedSubview($0)})
         
         self.spacing = spacing
-        
         self.axis = .vertical
         
     }

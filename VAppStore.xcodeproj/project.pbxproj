@@ -19,9 +19,11 @@
 		56AAF6DF222B1450006F508E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AAF6DD222B1450006F508E /* LaunchScreen.storyboard */; };
 		56AAF6E7222B152B006F508E /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6E6222B152B006F508E /* BaseTabBarController.swift */; };
 		56AAF6EA222B2BA9006F508E /* AppSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6E9222B2BA9006F508E /* AppSearchController.swift */; };
+		F291A063CE81B81448BB9135 /* Pods_VAppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6573B21A7C4BF83A77EC4791 /* Pods_VAppStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000183414F9620A9748E22DE /* Pods-VAppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-VAppStore/Pods-VAppStore.release.xcconfig"; sourceTree = "<group>"; };
 		5616A8BC22303B0900B34A64 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5679587A222ED10100A8353A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		56AAF6E0222B1450006F508E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56AAF6E6222B152B006F508E /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		56AAF6E9222B2BA9006F508E /* AppSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchController.swift; sourceTree = "<group>"; };
+		6573B21A7C4BF83A77EC4791 /* Pods_VAppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VAppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		773C7A5C240A87A3DD8BFE98 /* Pods-VAppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAppStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VAppStore/Pods-VAppStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F291A063CE81B81448BB9135 /* Pods_VAppStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +92,8 @@
 			children = (
 				56AAF6D3222B144F006F508E /* VAppStore */,
 				56AAF6D2222B144F006F508E /* Products */,
+				84FC94B48C2C06E5F602601B /* Pods */,
+				B24C95A5961BDC4B47C29B28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		84FC94B48C2C06E5F602601B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				773C7A5C240A87A3DD8BFE98 /* Pods-VAppStore.debug.xcconfig */,
+				000183414F9620A9748E22DE /* Pods-VAppStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B24C95A5961BDC4B47C29B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6573B21A7C4BF83A77EC4791 /* Pods_VAppStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56AAF6E3222B1450006F508E /* Build configuration list for PBXNativeTarget "VAppStore" */;
 			buildPhases = (
+				D8EF0A8D5C0BD1C319DB03C2 /* [CP] Check Pods Manifest.lock */,
 				56AAF6CD222B144F006F508E /* Sources */,
 				56AAF6CE222B144F006F508E /* Frameworks */,
 				56AAF6CF222B144F006F508E /* Resources */,
+				B6AD24360D97652CFEDAC0BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +216,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B6AD24360D97652CFEDAC0BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VAppStore/Pods-VAppStore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VAppStore/Pods-VAppStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8EF0A8D5C0BD1C319DB03C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VAppStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56AAF6CD222B144F006F508E /* Sources */ = {
@@ -348,6 +421,7 @@
 		};
 		56AAF6E4222B1450006F508E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 773C7A5C240A87A3DD8BFE98 /* Pods-VAppStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +439,7 @@
 		};
 		56AAF6E5222B1450006F508E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 000183414F9620A9748E22DE /* Pods-VAppStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

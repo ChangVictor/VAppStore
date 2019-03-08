@@ -8,39 +8,40 @@
 
 import Foundation
 
-class Service{
+class Service {
     
-    static let shared = Service() // Singleton object
+    static let shared = Service() // singleton
     
     func fetchApps(completion: @escaping ([Result], Error?) -> ()) {
-        print("Fetching iTunes apps from service layer")
+        print("Fetching itunes apps from Service layer")
         
-            let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
-                guard let url = URL(string: urlString) else { return }
-            // fetch data from internet
-                URLSession.shared.dataTask(with: url) { (data, response, error) in
-                    if let error = error {
-                        print("Failed to fetch Apps: ", error)
-                        completion([], nil)
-                        return
-                    }
+        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+        guard let url = URL(string: urlString) else { return }
         
-                    guard let data = data else { return }
-                    // succes
-                    do {
-                        let searchResult = try
-                            JSONDecoder().decode(SearchResult.self, from: data)
-        //                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
-                        completion(searchResult.results, nil)
-        
-                    } catch let jsonError{
-                        
-                        print("Failed to decode JSON: ", jsonError.localizedDescription)
-                        completion([], jsonError)
-        
-                    }
-        
-                }.resume()
+        // fetch data from internet
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            if let err = err {
+                print("Failed to fetch apps:", err)
+                completion([], nil)
+                return
+            }
+            
+            // success
+            guard let data = data else { return }
+            do {
+                let searchResult = try
+                    JSONDecoder().decode(SearchResult.self, from: data)
+                
+                completion(searchResult.results, nil)
+                
+            } catch let jsonErr {
+                
+                print("Failed to decode json:", jsonErr)
+                completion([], jsonErr)
+                
+            }
+            
+            }.resume() // fires off the request
     }
     
 }
