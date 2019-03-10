@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56094E7E223549B700635453 /* AppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56094E7D223549B700635453 /* AppsController.swift */; };
+		56094E8022354A4300635453 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56094E7F22354A4300635453 /* BaseListController.swift */; };
 		5616A8BD22303B0900B34A64 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5616A8BC22303B0900B34A64 /* Service.swift */; };
 		5679587B222ED10100A8353A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679587A222ED10100A8353A /* SearchResult.swift */; };
 		56A63FE9222C1FB40019F9AD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		000183414F9620A9748E22DE /* Pods-VAppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VAppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-VAppStore/Pods-VAppStore.release.xcconfig"; sourceTree = "<group>"; };
+		56094E7D223549B700635453 /* AppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsController.swift; sourceTree = "<group>"; };
+		56094E7F22354A4300635453 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		5616A8BC22303B0900B34A64 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5679587A222ED10100A8353A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		56A63FE8222C1FB40019F9AD /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
@@ -54,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56094E7C223549A500635453 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				56094E7D223549B700635453 /* AppsController.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
 		5616A8BB22303AFB00B34A64 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +138,10 @@
 		56AAF6E8222B2B91006F508E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				56094E7C223549A500635453 /* Apps */,
 				56AAF6E6222B152B006F508E /* BaseTabBarController.swift */,
 				56AAF6E9222B2BA9006F508E /* AppSearchController.swift */,
+				56094E7F22354A4300635453 /* BaseListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,7 +286,9 @@
 				56AAF6D7222B144F006F508E /* ViewController.swift in Sources */,
 				56AAF6D5222B144F006F508E /* AppDelegate.swift in Sources */,
 				5679587B222ED10100A8353A /* SearchResult.swift in Sources */,
+				56094E7E223549B700635453 /* AppsController.swift in Sources */,
 				56A63FEC222C35510019F9AD /* UIView+Layout.swift in Sources */,
+				56094E8022354A4300635453 /* BaseListController.swift in Sources */,
 				56AAF6E7222B152B006F508E /* BaseTabBarController.swift in Sources */,
 				5616A8BD22303B0900B34A64 /* Service.swift in Sources */,
 				56AAF6EA222B2BA9006F508E /* AppSearchController.swift in Sources */,

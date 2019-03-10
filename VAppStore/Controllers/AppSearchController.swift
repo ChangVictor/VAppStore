@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class AppSearchControler: BaseListController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     fileprivate let cellId = "Cell"
     
@@ -110,13 +110,6 @@ class AppSearchControler: UICollectionViewController, UICollectionViewDelegateFl
         cell.appResult = appResults[indexPath.item]
         return cell
     }
-    
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
 }
