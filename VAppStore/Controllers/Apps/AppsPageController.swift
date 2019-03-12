@@ -25,6 +25,8 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         fetchData()
     }
     
+    var sectionTitle: AppGroup?
+    
     fileprivate func fetchData() {
         print("Fectching new JSON Data...")
         Service.shared.fetchGames { (appGroup, error) in
@@ -33,7 +35,10 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
                 return
             }
             
-            print(appGroup?.feed.results)
+            self.sectionTitle = appGroup
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -47,11 +52,16 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsGroupCell
+        
+        cell.titleLabel.text = sectionTitle?.feed.title
+        cell.horizontalController.appGroup = sectionTitle
+        cell.horizontalController.collectionView.reloadData()
+        
         return cell
     }
     
