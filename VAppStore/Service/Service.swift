@@ -44,36 +44,54 @@ class Service {
             }.resume() // fires off the request
     }
     
-    public func fetchGames(completion: @escaping (AppGroup?, Error?) -> ()) {
+    public func fetchTopFree(completion: @escaping (AppGroup?, Error?) -> ()) {
         
         let topFreeUrl = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/50/explicit.json"
-        let editorsChoirceUrl = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love-all/50/explicit.json"
-        guard let url = URL(string: topFreeUrl ) else { return }
+
+        fetchAppGroup(urlString: topFreeUrl, completion: completion)
+    }
+    
+    public func fetchEditorsChoiceGames(completion: @escaping (AppGroup?, Error?) -> ()) {
         
+        let editorsChoirceUrl = "https://rss.itunes.apple.com/api/v1/us/ios-apps/new-games-we-love-all/50/explicit.json"
+
+        fetchAppGroup(urlString: editorsChoirceUrl, completion: completion)
+    }
+    
+    public func fetchTopGrossing(completion: @escaping (AppGroup?, Error?) -> ()) {
+        
+        let topGrossingUrl = "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-grossing/all/25/explicit.json"
+        
+        fetchAppGroup(urlString: topGrossingUrl, completion: completion)
+    }
+    
+    // helper func
+    
+    func fetchAppGroup(urlString: String, completion: @escaping (AppGroup?, Error?) -> ()) {
+        guard let url = URL(string: urlString ) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if let error = error {
-                completion(nil, error)
-                return
-            }
-            
-            do {
-                
-                let appGroup = try JSONDecoder().decode(AppGroup.self, from: data!)
-                //succes case
-//                appGroup.feed.results.forEach({print($0.name)})
-                completion(appGroup, nil)
-            } catch {
-                completion(nil, error)
-//                print("Failed to decode JSON: ", error.localizedDescription)
-            }
-            
-            
-            
-            
-        }.resume() // this will fire the request
         
+        if let error = error {
+        completion(nil, error)
+        return
+        }
+        
+        do {
+        
+        let appGroup = try JSONDecoder().decode(AppGroup.self, from: data!)
+        //succes case
+        //                appGroup.feed.results.forEach({print($0.name)})
+        completion(appGroup, nil)
+        } catch {
+        completion(nil, error)
+        //                print("Failed to decode JSON: ", error.localizedDescription)
+        }
+        
+        
+        
+        
+        }.resume() // this will fire the request
     }
     
 }
