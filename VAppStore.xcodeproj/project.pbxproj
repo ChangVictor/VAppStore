@@ -24,6 +24,7 @@
 		56AAF6E7222B152B006F508E /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6E6222B152B006F508E /* BaseTabBarController.swift */; };
 		56AAF6EA222B2BA9006F508E /* AppSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AAF6E9222B2BA9006F508E /* AppSearchController.swift */; };
 		56B774572237FAC600EF6FC7 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B774562237FAC600EF6FC7 /* AppGroup.swift */; };
+		56DC49CB2239565900663B97 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC49CA2239565900663B97 /* SocialApp.swift */; };
 		56EDB14D223712D500577ACC /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EDB14C223712D500577ACC /* AppRowCell.swift */; };
 		56EDB14F2237137F00577ACC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EDB14E2237137F00577ACC /* Extensions.swift */; };
 		56EDB15122371EDC00577ACC /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EDB15022371EDC00577ACC /* AppsPageHeader.swift */; };
@@ -53,6 +54,7 @@
 		56AAF6E6222B152B006F508E /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		56AAF6E9222B2BA9006F508E /* AppSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchController.swift; sourceTree = "<group>"; };
 		56B774562237FAC600EF6FC7 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		56DC49CA2239565900663B97 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		56EDB14C223712D500577ACC /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		56EDB14E2237137F00577ACC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		56EDB15022371EDC00577ACC /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				5679587A222ED10100A8353A /* SearchResult.swift */,
 				56B774562237FAC600EF6FC7 /* AppGroup.swift */,
+				56DC49CA2239565900663B97 /* SocialApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				56AAF6D7222B144F006F508E /* ViewController.swift in Sources */,
 				562D78D12236EF2D00CDA9EC /* AppsGroupCell.swift in Sources */,
+				56DC49CB2239565900663B97 /* SocialApp.swift in Sources */,
 				56AAF6D5222B144F006F508E /* AppDelegate.swift in Sources */,
 				56B774572237FAC600EF6FC7 /* AppGroup.swift in Sources */,
 				5679587B222ED10100A8353A /* SearchResult.swift in Sources */,

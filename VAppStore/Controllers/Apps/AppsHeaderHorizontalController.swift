@@ -39,7 +39,10 @@ class AppsHeaderHorizontalController: BaseListController, UICollectionViewDelega
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsHeaderCell
+        cell.companyLabel.text = "Company Name"
+//        cell.titleLabel.text
+//        cell.imageView
             
         return cell
     }
