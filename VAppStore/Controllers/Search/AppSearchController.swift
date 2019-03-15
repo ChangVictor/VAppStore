@@ -66,7 +66,7 @@ class AppSearchControler: BaseListController, UICollectionViewDelegateFlowLayout
                     print("Search text failed: ", error.localizedDescription)
                     return
                 }
-                self.appResults = result
+                self.appResults = result?.results ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -84,7 +84,7 @@ class AppSearchControler: BaseListController, UICollectionViewDelegateFlowLayout
                 return
             }
             
-            self.appResults = results
+            self.appResults = results?.results ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
