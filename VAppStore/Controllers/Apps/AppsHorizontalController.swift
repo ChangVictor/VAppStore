@@ -10,9 +10,17 @@ import UIKit
 
 class AppsHorizontalController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     
-    let cellId = "id"
+    let cellId = "cellId"
     
     var appGroup: AppGroup?
+    
+    var didSelectHandler: ((FeedResult) -> ())?
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let app = appGroup?.feed.results[indexPath.item] else { return }
+        
+        didSelectHandler?(app)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
