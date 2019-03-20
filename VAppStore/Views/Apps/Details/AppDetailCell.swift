@@ -28,7 +28,7 @@ class AppDetailCell: UICollectionViewCell {
     
     let whatsNewLabel = UILabel(text: "What's New", font: .boldSystemFont(ofSize: 20))
     
-    let releaseNotesLabel = UILabel(text: "Release Notes", font: .systemFont(ofSize: 16), numberOfLines: 0)
+    let releaseNotesLabel = UILabel(text: "Release Notes", font: .systemFont(ofSize: 18), numberOfLines: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
