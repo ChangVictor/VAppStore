@@ -11,13 +11,13 @@ import UIKit
 class AppDetailCell: UICollectionViewCell {
     
     var app: Result! {
-    didSet {
-        nameLabel.text = app?.trackName
-        releaseNotesLabel.text = app?.releaseNotes
-        appIconImageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""), completed: nil)
-        priceButton.setTitle(app?.formattedPrice, for: .normal)
-    
-    }
+        didSet {
+            nameLabel.text = app?.trackName
+            releaseNotesLabel.text = app?.releaseNotes
+            appIconImageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""), completed: nil)
+            priceButton.setTitle(app?.formattedPrice, for: .normal)
+            
+        }
     }
     
     let appIconImageView = UIImageView(cornerRadius: 16)
@@ -32,9 +32,7 @@ class AppDetailCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .lightGray
-        
+                
         appIconImageView.backgroundColor = .red
         appIconImageView.constrainWidth(constant: 140)
         appIconImageView.constrainHeight(constant: 140)
