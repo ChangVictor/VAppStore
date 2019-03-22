@@ -1,29 +1,27 @@
 //
-//  AppPreviewCell.swift
+//  ScreenshotCell.swift
 //  VAppStore
 //
-//  Created by Victor Chang on 21/03/2019.
+//  Created by Victor Chang on 22/03/2019.
 //  Copyright © 2019 Victor Chang. All rights reserved.
 //
 
 import UIKit
 
-class AppPreviewCell: UICollectionViewCell {
+class ScreenshotCell: UICollectionViewCell {
     
-    let horizontalController = PreviewScreenshotsController()
+    let imageView = UIImageView(cornerRadius: 12)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .red
-        
-        addSubview(horizontalController.view)
-        horizontalController.view.fillSuperview()
+        imageView.backgroundColor = .purple
+        addSubview(imageView)
+        imageView.fillSuperview()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
