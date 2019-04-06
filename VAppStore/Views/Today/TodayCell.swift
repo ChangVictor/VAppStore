@@ -10,7 +10,7 @@ import UIKit
 
 class TodayCell: UICollectionViewCell {
     
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "today_icon"))
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "xcode"))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
